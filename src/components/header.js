@@ -1,35 +1,59 @@
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
+import { useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
+const Header = ({ siteTitle }) => {
+
+  const data = useStaticQuery(
+    graphql`
+    query {
+        file(relativePath: { eq: "walkabout_banner.jpg" }) {
+            childImageSharp {
+                fixed(width: 800) {
+                    ...GatsbyImageSharpFixed
+                }
+            }
+        }
+
+    }`
+  )
+
+return (
+  <header>
     <div
       style={{
         margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        maxWidth: 960
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+
+      <Img fixed={data.file.childImageSharp.fixed} />
+
+
+      <ul class="menubar">
+          <li>
+            <Link to="/">HOME</Link>
+          </li>
+          <li>
+            <Link to="/About">ABOUT</Link>
+          </li>
+          <li>
+            <Link to="/Activities">ACTIVITIES</Link>
+          </li>
+          <li>
+            <Link to="/Contact">CONTACT</Link>
+          </li>
+          <li>
+            <Link to="/News">NEWS</Link>
+          </li>
+      </ul>
     </div>
   </header>
-)
+) }
+
+
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
@@ -40,3 +64,6 @@ Header.defaultProps = {
 }
 
 export default Header
+
+
+
