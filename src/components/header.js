@@ -1,8 +1,9 @@
+import React from "react"
 import { Link, graphql } from "gatsby"
 import { useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import PropTypes from "prop-types"
-import React from "react"
+
 
 const Header = ({ siteTitle }) => {
 
@@ -32,7 +33,7 @@ return (
       <Img fixed={data.file.childImageSharp.fixed} />
 
 
-      <ul class="menubar">
+      <ul className="menubar">
           <li>
             <Link to="/">HOME</Link>
           </li>

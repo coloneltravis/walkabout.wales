@@ -5,14 +5,17 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import SideBar from "./sidebar"
+
 import "./layout.css"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, pageInfo }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
           title
+          twitterHandle
+          url
         }
       }
     }
@@ -37,6 +40,7 @@ const Layout = ({ children }) => {
             marginLeft: 170,
             maxWidth: 800
           }}>
+            <h2 className="page-title">{pageInfo.pageTitle}</h2>
            {children}
         </main>
       

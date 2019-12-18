@@ -4,12 +4,25 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
+import Share from "../components/Share"
+
 
 const IndexPage = ({data}) => (
-  <Layout>
+  <Layout pageInfo={{ pageTitle: `Welcome` }}>
     <SEO title="Home" />
     <div style={{ maxWidth: `800px`, marginBottom: `1.45rem`, padding: `4px` }}>
       <Img fluid={data.file.childImageSharp.fluid} />
+
+      <Share
+				  socialConfig={{
+					  twitterHandle: `${data.site.siteMetadata.twitterHandle}`,
+					  config: {
+						  url: `${data.site.siteMetadata.url}`,
+						  title: `${data.site.siteMetadata.title}`,
+            }
+          }}
+          tags = {[]}
+			/>
 
       <div style={{padding: `1em`}}>
         <p>
@@ -53,7 +66,16 @@ query {
         }
     }
   }
+
+  site {
+		siteMetadata {
+			url
+      twitterHandle
+      title
+		}
+	}
 }`
 
 export default IndexPage
+
 

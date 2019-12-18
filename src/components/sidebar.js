@@ -58,7 +58,7 @@ return (
       }}
     >
 
-      <ul class="sidebar">
+      <ul className="sidebar">
           <li>
             <Link to="/BreconBeacons"
                   style={{backgroundImage: `url(${data.breconbeacons.childImageSharp.fixed.src})` }}>
