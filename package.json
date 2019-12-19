@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "walkabout.wales",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Walkabout Wales migration to Gatsby",
+  "version": "0.0.1",
+  "author": "Jake Bourne <jake.bourne@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
@@ -26,6 +26,7 @@
     "gatsby-transformer-json": "^2.2.19",
     "gatsby-transformer-remark": "^2.6.37",
     "gatsby-transformer-sharp": "^2.2.23",
+    "gh-pages": "^2.1.1",
     "node-sass": "^4.13.0",
     "path": "^0.12.7",
     "prop-types": "^15.7.2",
@@ -50,13 +51,14 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \"",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/coloneltravis/walkaboutwales"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/coloneltravis/walkaboutwales/issues"
   }
 }
