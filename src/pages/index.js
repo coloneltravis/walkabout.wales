@@ -11,7 +11,7 @@ const IndexPage = ({data}) => (
   <Layout pageInfo={{ pageTitle: `Welcome` }}>
     <SEO title="Home" />
     <div style={{ maxWidth: `800px`, marginBottom: `1.45rem`, padding: `4px` }}>
-      <Img fluid={data.file.childImageSharp.fluid} />
+    <Img fluid={data.file.childImageSharp.fluid} />
 
       <Share
 				  socialConfig={{

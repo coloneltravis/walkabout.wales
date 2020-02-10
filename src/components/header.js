@@ -1,25 +1,10 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import { useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { Link } from "gatsby"
 import PropTypes from "prop-types"
+import banner from "../../static/assets/images/walkabout_banner.jpg"
 
 
 const Header = ({ siteTitle }) => {
-
-  const data = useStaticQuery(
-    graphql`
-    query {
-        file(relativePath: { eq: "walkabout_banner.jpg" }) {
-            childImageSharp {
-                fixed(width: 800) {
-                    ...GatsbyImageSharpFixed
-                }
-            }
-        }
-
-    }`
-  )
 
 return (
   <header>
@@ -29,9 +14,7 @@ return (
         maxWidth: 960
       }}
     >
-
-      <Img fixed={data.file.childImageSharp.fixed} />
-
+      <img src={banner} alt={siteTitle} />
 
       <ul className="menubar">
           <li>

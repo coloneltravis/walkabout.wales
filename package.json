@@ -52,13 +52,13 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \"",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "gatsby build && gh-pages -d public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/coloneltravis/walkaboutwales"
+    "url": "https://github.com/coloneltravis/walkabout.wales"
   },
   "bugs": {
-    "url": "https://github.com/coloneltravis/walkaboutwales/issues"
+    "url": "https://github.com/coloneltravis/walkabout.wales/issues"
   }
 }

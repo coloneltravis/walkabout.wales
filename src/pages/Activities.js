@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 
-const IndexPage = ({data}) => (
+const ActivitiesPage = ({data}) => (
   <Layout pageInfo={{ pageTitle: `Activities` }}>
     <SEO title="Activities" />
     <div style={{ maxWidth: `800px`, marginBottom: `1.45rem`, padding: `4px` }}>
@@ -48,5 +48,5 @@ query {
   }
 }`
 
-export default IndexPage
+export default ActivitiesPage
 

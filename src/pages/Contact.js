@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 import SEO from "../components/seo"
 import ContactForm from "../components/contactform"
 
-const Contact = ({data}) => (
+const ContactPage = ({data}) => (
   <Layout pageInfo={{ pageTitle: `Contact` }}>
     <SEO title="Contact" />
     <div style={{ maxWidth: `800px`, marginBottom: `1.45rem`, padding: `4px` }}>
@@ -22,11 +22,6 @@ const Contact = ({data}) => (
 
 
 
-
-
-
-
-
 export const query = graphql`
 query {
   file(relativePath: {eq: "waw_intro_banner.jpg"}) {
@@ -38,5 +33,5 @@ query {
   }
 }`
 
-export default Contact
+export default ContactPage
 

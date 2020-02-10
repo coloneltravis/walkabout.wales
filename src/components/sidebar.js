@@ -1,55 +1,14 @@
-import { Link, graphql } from "gatsby"
-import { useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import React from "react"
 
+import breconbeacons from "../../static/assets/images/breconbeacons_menu.png"
+import gower from "../../static/assets/images/gower_menu.png"
+import pembrokeshire from "../../static/assets/images/pembrokeshire_menu.png"
+import wyevalley from "../../static/assets/images/wyevalley_menu.png"
+import snowdonia from "../../static/assets/images/snowdonia_menu.png"
+
+
 const SideBar = () => {
-
-  const data = useStaticQuery(
-    graphql`
-    query {
-      gower: file(relativePath: {eq: "gower_menu.png"}) {
-                childImageSharp {
-                    fixed (width:134 height:100) {
-                        ...GatsbyImageSharpFixed
-                    }
-                }
-        }
-
-      breconbeacons: file(relativePath: {eq: "breconbeacons_menu.png"}) {
-        childImageSharp {
-            fixed (width:134) {
-                ...GatsbyImageSharpFixed
-            }
-        }
-    }
-
-      wyevalley: file(relativePath: {eq: "wyevalley_menu.png"}) {
-                    childImageSharp {
-                    fixed (width:134) {
-                      ...GatsbyImageSharpFixed
-                    }
-                }
-      }
-      
-      pembrokeshire: file(relativePath: {eq: "pembrokeshire_menu.png"}) {
-            childImageSharp {
-            fixed (width:134) {
-              ...GatsbyImageSharpFixed
-            }
-        }
-      }
-
-    snowdonia: file(relativePath: {eq: "snowdonia_menu.png"}) {
-        childImageSharp {
-          fixed (width:134) {
-            ...GatsbyImageSharpFixed
-          }
-      }
-    }
-  
-  
-  }`
-  )
 
 return (
   <aside
@@ -60,32 +19,32 @@ return (
 
       <ul className="sidebar">
           <li>
-            <Link to="/BreconBeacons"
-                  style={{backgroundImage: `url(${data.breconbeacons.childImageSharp.fixed.src})` }}>
-               Brecon Beacons National Park
+            <Link to="/BreconBeacons">
+              <img src={breconbeacons} alt="Brecon Beacons National Park" />
+            Brecon Beacons National Park
             </Link>
           </li>
           <li>
-            <Link to="/GowerPeninsula"
-                  style={{backgroundImage: `url(${data.gower.childImageSharp.fixed.src})` }}>
+            <Link to="/GowerPeninsula">
+                   <img src={gower} alt="Gower Peninsula" />
               Gower Peninsula
             </Link>
           </li>
           <li>
-            <Link to="/Pembrokeshire"
-                  style={{backgroundImage: `url(${data.pembrokeshire.childImageSharp.fixed.src})` }}>
+            <Link to="/Pembrokeshire">
+                   <img src={pembrokeshire} alt="Pembrokeshire and Ceredigion" />
                 Pembrokeshire
             </Link>
           </li>
           <li>
-          <Link to="/WyeValley"
-                style={{backgroundImage: `url(${data.wyevalley.childImageSharp.fixed.src})` }}>
+          <Link to="/WyeValley">
+                 <img src={wyevalley} alt="Wye Valley" />
                Wye Valley
           </Link>
           </li>
           <li>
-          <Link to="/Snowdonia"
-            style={{backgroundImage: `url(${data.snowdonia.childImageSharp.fixed.src})` }}>
+          <Link to="/Snowdonia">
+             <img src={snowdonia} alt="Snowdonia National Park" />
             Snowdonia
           </Link>
           </li>

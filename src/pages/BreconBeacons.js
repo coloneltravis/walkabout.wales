@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 import SEO from "../components/seo"
 import Share from "../components/Share"
 
-const IndexPage = ({data}) => (
+const BeaconsPage = ({data}) => (
   <Layout pageInfo={{ pageTitle: `Brecon Beacons National Park` }}>
     <SEO title="Brecon Beacons" />
     <div style={{ maxWidth: `800px`, marginBottom: `1.45rem`, padding: `4px` }}>
@@ -75,5 +75,5 @@ query {
 	}
 }`
 
-export default IndexPage
+export default BeaconsPage
 
