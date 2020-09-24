@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{ns4D:function(n,e,t){"use strict";t.r(e),t.d(e,"query",(function(){return i}));t("q1tI"),t("Bl7J"),t("9eSz"),t("vrFN");var i="2558051555";e.default=ActivitiesPage}}]);
-//# sourceMappingURL=component---src-pages-activities-js-b91aef37fa0026afb79e.js.map
