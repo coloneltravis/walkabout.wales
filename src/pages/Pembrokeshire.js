@@ -8,7 +8,7 @@ import Share from "../components/Share"
 
 const IndexPage = ({data}) => (
 
-<Layout pageInfo={{ pageTitle: `Pembrokeshre and Ceredigion Coastal Paths` }}>
+<Layout pageInfo={{ pageTitle: `Pembrokeshire and Ceredigion Coastal Paths` }}>
     <SEO title="Brecon Beacons" />
     <div style={{ maxWidth: `800px`, marginBottom: `1.45rem`, padding: `4px` }}>
 

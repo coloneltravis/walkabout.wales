@@ -24,10 +24,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
         content: `---\ntitle: ${node.title}\nstatus: ${node.status}\ndate: ${node.updatedAt}\n---\n${node.bodyText}`,
         contentDigest: node.internal.contentDigest
       }
-
-    });
-
-    
+    });  
   }
 }
 

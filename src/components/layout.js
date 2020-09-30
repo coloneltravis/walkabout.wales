@@ -35,11 +35,7 @@ const Layout = ({ children, pageInfo }) => {
 
       <SideBar/>
       
-        <main
-          style={{
-            marginLeft: 170,
-            maxWidth: 800
-          }}>
+        <main>
             <h2 className="page-title">{pageInfo.pageTitle}</h2>
            {children}
         </main>

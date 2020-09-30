@@ -26,25 +26,51 @@ body
     background-color: $siteColour;
 
 
-
-header
+nav
+    margin: 5px;
     ul.menubar
         list-style: none;
         background-color: #000;
-        height: 2em;
 
         li
-            float: left;
             padding: 10px;
-
             a
                 font-family: $menuFont;
                 font-weight: bold;
                 text-decoration: none;
                 color: $menuitemColour;
 
+
+
+@media (min-width: 300px)
+    aside
+        width: 100%;
+        height: auto; 
+
+    nav
+        ul.menubar
+            li
+                display: block;
+
+
+@media (min-width: 600px)
+    aside
+        width: 20%;
+        height: auto;
+        float: left;
+
+    main
+        width: 75%;
+        float: left;
+
+    nav
+        ul.menubar
+            height: 2em;
+            li
+                float: left;
+
+
 aside
-    float: left;
     ul.sidebar
         list-style: none;
         padding: 0;
@@ -57,10 +83,15 @@ aside
             display: inline-block;
             color: darken($siteColour, 40%);
             text-decoration: none;
-            width: 134px; height: 100px;
+
+
 
 main
     background-color: #fff;
     border-radius: 16px;
     padding: 6px;
+    margin: 10px;
 
+
+footer
+    clear: both;

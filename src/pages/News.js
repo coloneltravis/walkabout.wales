@@ -8,21 +8,19 @@ import SEO from "../components/seo"
 const NewsPage = ({data}) => (
   <Layout pageInfo={{ pageTitle: `News` }}>
     <SEO title="News" />
-    <div style={{ maxWidth: `800px`, marginBottom: `1.45rem`, padding: `4px` }}>
+    <div class="news-container" style={{ maxWidth: `800px`, marginBottom: `1.45rem`, padding: `4px` }}>
 
       <div style={{marginBottom: `20px`}}>
         <Img fluid={data.file.childImageSharp.fluid} />
       </div>
 
-      <div>
-          {data.allMarkdownRemark.edges.map(({ node }, index) => (
+      {data.allMarkdownRemark.edges.map(({ node }, index) => (
             <div key={node.id}>
               <div className="news-title">{node.frontmatter.title}</div>
               <div className="publish-date">{node.frontmatter.date}</div>
                <div dangerouslySetInnerHTML={{ __html: node.html }} />
             </div>
           ))}
-      </div>
     </div>
   </Layout>
 )

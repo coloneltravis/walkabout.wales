@@ -8,32 +8,26 @@ const Header = ({ siteTitle }) => {
 
 return (
   <header>
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960
-      }}
-    >
       <img src={banner} alt={siteTitle} />
-
-      <ul className="menubar">
-          <li>
-            <Link to="/">HOME</Link>
-          </li>
-          <li>
-            <Link to="/About">ABOUT</Link>
-          </li>
-          <li>
-            <Link to="/Activities">ACTIVITIES</Link>
-          </li>
-          <li>
-            <Link to="/Contact">CONTACT</Link>
-          </li>
-          <li>
-            <Link to="/News">NEWS</Link>
-          </li>
-      </ul>
-    </div>
+      <nav>
+        <ul className="menubar">
+            <li>
+              <Link to="/">HOME</Link>
+            </li>
+            <li>
+              <Link to="/About">ABOUT</Link>
+            </li>
+            <li>
+              <Link to="/Activities">ACTIVITIES</Link>
+            </li>
+            <li>
+              <Link to="/Contact">CONTACT</Link>
+            </li>
+            <li>
+              <Link to="/News">NEWS</Link>
+            </li>
+        </ul>
+      </nav>
   </header>
 ) }
 
