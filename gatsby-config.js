@@ -22,16 +22,23 @@ module.exports = {
     {
       resolve: `gatsby-source-graphcms`,
       options: {
-        endpoint: `https://api-euwest.graphcms.com/v1/ck39a7zkj247f01cw2r0z1lsa/master`,
+        endpoint: `https://api-eu-central-1.graphcms.com/v2/ck39a7zkj247f01cw2r0z1lsa/master`,
         query: `{
-            newses {
-              status
-              updatedAt
-              createdAt
-              id
-              title
-              bodyText
-            }
+          regionses {
+            regionTitle
+            regionDesc
+            slug
+            id
+            updatedAt
+            publishedAt
+          }
+          newses {
+            id
+            title
+            bodyText
+            publishedAt
+            updatedAt
+          }
         }`
       }
     },

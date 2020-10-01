@@ -23,8 +23,7 @@ const IndexPage = ({data}) => (
       />
 
       <div style={{padding: `1em`}}>
-        <p>Pen-Y-Fan is located in here and at an altitude of 886 metres, is the highest summit in South Wales. We offer the chance to walk to this summit and others in the range.</p>
-        <p>Although the Beacons give a wonderful the impression of remoteness, they are in fact, easily accessible from Cardiff and the other urban conurbations in South Wales. The terrain is varied, from the high summits or ‘Fans’ and long ridges, to lovely river valleys and one of our classic walks in this area is our ‘waterfall’ walk. The fantastic walks we lead are suitable for all abilities and follow the beautiful Hepste and Mellte rivers. There are tremendous views of the various waterfalls, including the most famous; Sgwd Y Eira, in English, the ‘Waterfall of Snow’ which you can actually walk behind its wall of water. Be prepared to get a little damp though !!!</p>
+        <p dangerouslySetInnerHTML={{ __html: data.regionseMarkdown.childMarkdownRemark.html }} />
       </div>
 
       <div>
@@ -64,7 +63,18 @@ query {
 			url
 			twitterHandle
 		}
-	}
+  }
+  
+  regionseMarkdown(childMarkdownRemark: {frontmatter: {slug: {eq: "snowdonia"}}}) {
+    id
+    childMarkdownRemark {
+      frontmatter {
+        date(formatString: "DD MMMM Y")
+        title
+      }
+      html
+    }
+  }
 }`
 
 export default IndexPage

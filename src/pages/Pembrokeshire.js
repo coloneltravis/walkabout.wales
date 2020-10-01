@@ -24,7 +24,7 @@ const IndexPage = ({data}) => (
       />
 
       <div style={{padding: `1em`}}>
-       <p>The Pembrokeshire Coast National Park is the UK’s only coastal national park and takes in over 180 miles of some of the most magnificent coastal scenery in Europe. With sea cliffs, secluded coves, sandy beaches, It makes for excellent walking and other water sport activities. Stretching some 60miles,(96km), along cardigan Bay, the Ceredigion Coast Path is a wonderful, wild coastal walking route. It’s coastal waters are a haven for wildlife and is a marine ‘Special Area of Conservation’ and from the path you can frequently observe grey seals, porpoises and bottlenose dolphins, along with many differing species of seabirds. Inland, we offer some great walks in the Presceli hills, which although relatively low in comparison with the Brecon Beacons and Snowdonia, there are some lovely routes, with great, scenic views over the coast. We always ensure that our guests stay at the best available accommodation and place great emphasis on the quality of our meals.</p>
+        <p dangerouslySetInnerHTML={{ __html: data.regionseMarkdown.childMarkdownRemark.html }} />
       </div>
 
       <div>
@@ -63,7 +63,18 @@ query {
 			url
 			twitterHandle
 		}
-	}
+  }
+  
+  regionseMarkdown(childMarkdownRemark: {frontmatter: {slug: {eq: "pembrokeshire"}}}) {
+    id
+    childMarkdownRemark {
+      frontmatter {
+        date(formatString: "DD MMMM Y")
+        title
+      }
+      html
+    }
+  }
 }`
 
 export default IndexPage

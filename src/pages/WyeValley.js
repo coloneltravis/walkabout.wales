@@ -23,8 +23,7 @@ const IndexPage = ({data}) => (
       />
 
       <div style={{padding: `1em`}}>
-        <p>This wonderful, wooded valley that forms the border between England and Wales is excellent walking territory with the river Wye flowing through its deep wooded, limestone gorges and offers the walker a wealth of interest and variety from spectacular viewpoints overlooking the river to quiet wooded trails.</p>
-        <p>We’ll walk some of the lesser know trails to beauty spots, discovering evidence of the rich cultural and industrial heritage along the way. Located close to Newport & Cardiff, its ideal for our one day walks or if time allows, why not spend a couple of days or a weekend with us discovering this magical area.</p>
+        <p dangerouslySetInnerHTML={{ __html: data.regionseMarkdown.childMarkdownRemark.html }} />
       </div>
 
       <div>
@@ -63,7 +62,18 @@ query {
 			url
 			twitterHandle
 		}
-	}
+  }
+  
+  regionseMarkdown(childMarkdownRemark: {frontmatter: {slug: {eq: "wyevalley"}}}) {
+    id
+    childMarkdownRemark {
+      frontmatter {
+        date(formatString: "DD MMMM Y")
+        title
+      }
+      html
+    }
+  }
 }`
 
 export default IndexPage

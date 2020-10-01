@@ -23,8 +23,7 @@ const IndexPage = ({data}) => (
     />
 
       <div style={{padding: `1em`}}>
-        <p>The Gower Peninsular near Swansea was the first place in Britain to be designated an ‘Area of Outstanding Natural Beauty’, (AONB). With its varied landscapes, stunning beaches and diverse flora and fauna, it certainly deserves this status. Although compact in area, there lovely walks along secluded paths through woodland, heath and hidden coves. Apart from walking, there are fantastic opportunities for water sport activities along beautiful, unspoiled beaches like Llangenthith and Three Cliffs bay and we run surfing, wind surfing, sea kayaking, coastteering, etc.</p> 
-        <p>Although the Beacons give a wonderful the impression of remoteness, they are in fact, easily accessible from Cardiff and the other urban conurbations in South Wales. The terrain is varied, from the high summits or ‘Fans’ and long ridges, to lovely river valleys and one of our classic walks in this area is our ‘waterfall’ walk. The fantastic walks we lead are suitable for all abilities and follow the beautiful Hepste and Mellte rivers. There are tremendous views of the various waterfalls, including the most famous; Sgwd Y Eira, in English, the ‘Waterfall of Snow’ which you can actually walk behind its wall of water. Be prepared to get a little damp though !!!</p>
+        <p dangerouslySetInnerHTML={{ __html: data.regionseMarkdown.childMarkdownRemark.html }} />
       </div>
 
       <div style={{marginLeft: `0px`}}>
@@ -63,7 +62,18 @@ query {
 			url
 			twitterHandle
 		}
-	}
+  }
+  
+  regionseMarkdown(childMarkdownRemark: {frontmatter: {slug: {eq: "gower"}}}) {
+    id
+    childMarkdownRemark {
+      frontmatter {
+        date(formatString: "DD MMMM Y")
+        title
+      }
+      html
+    }
+  }
 }`
 
 export default IndexPage

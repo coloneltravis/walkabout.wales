@@ -14,11 +14,11 @@ const NewsPage = ({data}) => (
         <Img fluid={data.file.childImageSharp.fluid} />
       </div>
 
-      {data.allMarkdownRemark.edges.map(({ node }, index) => (
-            <div key={node.id}>
-              <div className="news-title">{node.frontmatter.title}</div>
-              <div className="publish-date">{node.frontmatter.date}</div>
-               <div dangerouslySetInnerHTML={{ __html: node.html }} />
+      {data.allNewseMarkdown.edges.map(({ node }, index) => (
+            <div key={node.childMarkdownRemark.id}>
+              <div className="news-title">{node.childMarkdownRemark.frontmatter.title}</div>
+              <div className="publish-date">{node.childMarkdownRemark.frontmatter.date}</div>
+               <div dangerouslySetInnerHTML={{ __html: node.childMarkdownRemark.html }} />
             </div>
           ))}
     </div>
@@ -36,15 +36,15 @@ query {
     }
   }
 
-  allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
+  allNewseMarkdown(sort: {fields: childMarkdownRemark___frontmatter___date, order: DESC}) {
     edges {
       node {
-        id
-        html
-        frontmatter {
-          title
-          status
-          date(formatString: "DD MMMM Y")
+        childMarkdownRemark {
+          html
+          frontmatter {
+            date(formatString: "DD MMMM Y")
+            title
+          }
         }
       }
     }
